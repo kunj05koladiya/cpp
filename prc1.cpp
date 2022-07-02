@@ -6,5 +6,4 @@ int main()
     std::cout<<"\t b: "<<b;
     std::cout<<"\t a+b: "<<a+b;
     std::cout<<"\n hello...";
-
 }

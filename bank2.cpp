@@ -12,7 +12,7 @@ class bank
         this->name=name;
 
     }
-    void getdata()
+    ~bank()
     {
         cout<<"\n name is:"<<name;
         cout<<"\t account no:"<<accno;
@@ -22,7 +22,5 @@ class bank
 int main()
 {
     bank a(100,1100,"KUNJ KOLADIYA"),b(101,10200,"HET PATEL");
-    a.getdata();
-    b.getdata();
     return 0;
 }

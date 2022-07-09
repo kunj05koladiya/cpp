@@ -9,26 +9,27 @@ class foodorder
 };
 void foodorder::menu()
 {
-    cout<<"\n_________BROWN DOSA_________";             cout<<"\t\t______BROWN DOSA_______";
-    cout<<"\n----------------------------";             cout<<"\t\t-----------------------";
-    cout<<"\n-------SOUTH INDIAN---------";             cout<<"\t\t------COLD DRINK-------";
-    cout<<"\nNO.       MENU         PRICE";             cout<<"\t\tNO.      MENU     PRICE";
-    cout<<"\n1     SIMPLE PAPER     40/-";              cout<<"\t\t10    BUTTER MILK  20/-";
-    cout<<"\n2     BUTTER PAPER     60/-";              cout<<"\t\t11    COCA-COLA    25/-";
-    cout<<"\n3     GARLIC PAPER     80/-";              cout<<"\t\t12    PEPSI        25/-";
-    cout<<"\n4     MAISUR          100/-";              cout<<"\t\t13    THUMS-UP     25/-";
-    cout<<"\n5     BUTTER MAISUR   120/-";              cout<<"\t\t-----------------------";
-    cout<<"\n6     GOTALO          120/-";
-    cout<<"\n7     JINI ROL        160/-";
-    cout<<"\n8     PALAK ROL       170/-";
+    cout<<"\n_________BROWN DOSA_________";             cout<<"\t\t______BROWN DOSA_______";            cout<<"\t\t================================";
+    cout<<"\n----------------------------";             cout<<"\t\t-----------------------";            cout<<"\t\t_______ OVER SPECIALITY ________";
+    cout<<"\n-------SOUTH INDIAN---------";             cout<<"\t\t------COLD DRINK-------";            cout<<"\t\t================================";
+    cout<<"\nNO.       MENU         PRICE";             cout<<"\t\tNO.      MENU     PRICE";            cout<<"\t\t 10% DISCOUNT FOR...";
+    cout<<"\n1     SIMPLE PAPER     40/-";              cout<<"\t\t10    BUTTER MILK  20/-";            cout<<"\t\t              BILLS BELOW 2000/-";
+    cout<<"\n2     BUTTER PAPER     60/-";              cout<<"\t\t11    COCA-COLA    25/-";            cout<<"\t\t--------------------------------";
+    cout<<"\n3     GARLIC PAPER     80/-";              cout<<"\t\t12    PEPSI        25/-";            cout<<"\t\t 20% DISCOUNT FOR...";
+    cout<<"\n4     MAISUR          100/-";              cout<<"\t\t13    THUMS-UP     25/-";            cout<<"\t\t              BILLS OVER 2000/-";
+    cout<<"\n5     BUTTER MAISUR   120/-";              cout<<"\t\t-----------------------";            cout<<"\t\t--------------------------------";
+    cout<<"\n6     GOTALO          120/-";                                                              cout<<"\t\t\t\t\t\t NO.. GST FOR BILLS...";
+    cout<<"\n7     JINI ROL        160/-";                                                              cout<<"\t\t\t\t\t\t                   OVER 4000/-";
+    cout<<"\n8     PALAK ROL       170/-";                                                              cout<<"\t\t\t\t\t\t================================";
     cout<<"\n9     PIZZA DOSA      190/-";
     cout<<"\n----------------------------";
-
-            cout<<"\n\n||--FOR CONFERMING ORDER PRESS 0--||";   
+            cout<<"\n\n\n************************************";
+            cout<<"\n||--FOR CONFERMING ORDER PRESS 0--||"; 
+            cout<<"\n************************************";  
 }
 void foodorder::order()
 {
-    int qty,price,total=0,dis,gst,netamt;
+    int qty,price,total=0,dis,gst=0,netamt=0;
     for(i=1;i<14;i++)
     {
         cout<<"\n\nenter n:";
@@ -139,16 +140,27 @@ void foodorder::order()
         }
        total+=price; 
     }
-    dis=(total*10)/100;
-    gst=(total*18)/100;
+    if(total<2000)
+    {
+        dis=(total*10)/100;
+    }
+    else
+    {
+        dis=(total*20)/100;
+    }
+    if(total<4000)
+    {
+        gst=(total*18)/100;
+    }
     netamt=(total-dis)+gst;
-    cout<<"\n\n ---------------------------";
+    cout<<"\n\n\n ===========================";
     cout<<"\n TOTAL AMOUNT IS:"<<total;
     cout<<"\n DIS:"<<dis;
     cout<<"\n GST:"<<gst;
     cout<<"\n\n YOUR BILL IS:"<<netamt;
-    cout<<"\n --||THANKS FOR VISITING||--";
     cout<<"\n ---------------------------";
+    cout<<"\n --||THANKS FOR VISITING||--";
+    cout<<"\n ===========================";
 }
     
 int main()

@@ -1,28 +1,6 @@
 #include<iostream>
 #include<string>
 using namespace std;
-class acc
-{
-    string name;
-    int accno;
-    public:
-    void setname(string n)
-    {
-        name=n;
-    }
-    void setaccno(int a)
-    {                                          
-        accno=a;
-    }
-    string getname()
-    {
-        return name;
-    }
-    int getaccno()
-    {
-        return accno;
-    }
-};
 class savingacc
 {
     int dep,with;
@@ -120,7 +98,7 @@ class currentacc
         cout<<"balance is:"<<bal;
     }
 };
-class person:public acc,public savingacc,public currentacc
+class person:public savingacc,public currentacc
 {
     int bal;
     public:
@@ -168,7 +146,7 @@ int main()
             v.setaccno(k);
             cout<<"\n\na/c name:"<<v.getname();
             cout<<"\na/c no:"<<v.getaccno();
-            cout<<"\n\nbalance:"<<v.showbal();
+            // cout<<"\n\nbalance:"<<v.showbal();
             do
             {
                 cout<<"\n\n1.deposit:";

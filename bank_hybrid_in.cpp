@@ -4,7 +4,6 @@ using namespace std;
 class acc
 {
     string name;
-    protected:
     int accno;
     public:
     void setname(string n)
@@ -12,7 +11,7 @@ class acc
         name=n;
     }
     void setaccno(int a)
-    {
+    {                                          
         accno=a;
     }
     string getname()
@@ -26,7 +25,6 @@ class acc
 };
 class savingacc:public acc
 {
-    protected:
     int dep,with;
     int bal=5000;
     string name;
@@ -76,7 +74,6 @@ class savingacc:public acc
 };
 class currentacc
 {
-    protected:
     int dep,bal=9000;
     string name;
     int accno;
@@ -125,28 +122,11 @@ class currentacc
 };
 class person:public savingacc,public currentacc
 {
-    int bal,accno;
-    string name;
+    int bal;
     public:
     person(int amt)
     {
         bal=amt;
-    }
-    void setname(string n)
-    {
-        name=n;
-    }
-    void setaccno(int a)
-    {
-        accno=a;
-    }
-    string getname()
-    {
-        return name;
-    }
-    int getaccno()
-    {
-        return accno;
     }
     void deposit(int dep)
     {
@@ -160,10 +140,6 @@ class person:public savingacc,public currentacc
     int showbal()
     {
         return bal;
-    }
-    void display()
-    {
-        cout<<"balance is:"<<bal;
     }
 };
 int main()
@@ -180,7 +156,7 @@ int main()
     {
         case 1:
         {
-            person v;
+            currentacc v;
             string h;
             cout<<"\nenter the name of the a/c holder:";
             cin>>h;
@@ -192,7 +168,7 @@ int main()
             v.setaccno(k);
             cout<<"\n\na/c name:"<<v.getname();
             cout<<"\na/c no:"<<v.getaccno();
-            cout<<"\nbalance:"<<v.showbal();
+            // cout<<"\n\nbalance:"<<v.showbal();
             do
             {
                 cout<<"\n\n1.deposit:";
@@ -203,14 +179,14 @@ int main()
                 switch(choice)
                 {
                     case 1:
-                    cout<<"enter deposit:";
+                    cout<<"\nenter deposit:";
                     cin>>dep;
                     v.deposit(dep);
                     v.display();
                     break;
 
                     case 2:
-                    cout<<"enter withdraw amt:";
+                    cout<<"\nenter withdraw amt:";
                     cin>>with;
                     v.withdraw(with);
                     v.display();
@@ -234,7 +210,7 @@ int main()
             s.setaccno(k);
             cout<<"\n\na/c name:"<<s.getname();
             cout<<"\na/c no:"<<s.getaccno();
-            cout<<"\nbalance:"<<s.showbal();
+            cout<<"\n\nbalance:"<<s.showbal();
             do
             {
                 cout<<"\n\n1.deposit:";
@@ -245,14 +221,14 @@ int main()
                 switch(choice)
                 {
                     case 1:
-                    cout<<"enter deposit amt:";
+                    cout<<"\nenter deposit amt:";
                     cin>>dep;
                     s.deposit(dep);
                     s.display();
                     break;
 
                     case 2:
-                    cout<<"enter withdraw amt:";
+                    cout<<"\nenter withdraw amt:";
                     cin>>with;
                     s.withdraw(with);
                     s.display();

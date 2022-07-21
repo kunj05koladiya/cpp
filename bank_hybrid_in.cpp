@@ -1,29 +1,31 @@
 #include<iostream>
 #include<string>
 using namespace std;
-class acc
+class bank
 {
     string name;
-    int accno;
+    int accno,bal;
     public:
-    void setname(string n)
+    void deposit(int dep)
     {
-        name=n;
+        bal+=dep;
     }
-    void setaccno(int a)
-    {                                          
-        accno=a;
-    }
-    string getname()
+    void withdraw(int with)
     {
-        return name;
+      
+        bal-=with;
     }
-    int getaccno()
+    int showbal()
     {
-        return accno;
+        return bal;
     }
+    void display()
+    {
+        cout<<"\n balance is:"<<bal;
+    }
+    
 };
-class savingacc:public acc
+class savingacc:public bank
 {
     int dep,with;
     int bal=5000;
@@ -69,8 +71,9 @@ class savingacc:public acc
     }
     void display()
     {
-        cout<<"\n balance is:"<<bal;
+        cout<<"balance is:"<<bal;
     }
+    
 };
 class currentacc
 {
@@ -78,7 +81,7 @@ class currentacc
     string name;
     int accno;
     public:
-     void setname(string n)
+    void setname(string n)
     {
         name=n;
     }
@@ -122,24 +125,24 @@ class currentacc
 };
 class person:public savingacc,public currentacc
 {
-    int bal;
+    string name;
+    int accno,bal;
     public:
-    person(int amt)
+    void setname(string n)
     {
-        bal=amt;
+        name=n;
     }
-    void deposit(int dep)
-    {
-        bal+=dep;
+    void setaccno(int a)
+    {                                          
+        accno=a;
     }
-    void withdraw(int with)
+    string getname()
     {
-      
-        bal-=with;
+        return name;
     }
-    int showbal()
+    int getaccno()
     {
-        return bal;
+        return accno;
     }
 };
 int main()
@@ -168,7 +171,7 @@ int main()
             v.setaccno(k);
             cout<<"\n\na/c name:"<<v.getname();
             cout<<"\na/c no:"<<v.getaccno();
-            // cout<<"\n\nbalance:"<<v.showbal();
+             cout<<"\n\nbalance:"<<v.showbal();
             do
             {
                 cout<<"\n\n1.deposit:";

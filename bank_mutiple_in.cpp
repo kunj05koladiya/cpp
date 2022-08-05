@@ -146,7 +146,7 @@ int main()
             v.setaccno(k);
             cout<<"\n\na/c name:"<<v.getname();
             cout<<"\na/c no:"<<v.getaccno();
-            // cout<<"\n\nbalance:"<<v.showbal();
+            cout<<"\n\nbalance:"<<v.showbal();
             do
             {
                 cout<<"\n\n1.deposit:";
